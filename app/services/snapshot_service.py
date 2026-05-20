@@ -24,11 +24,17 @@ class SnapshotService:
 
         day = now.strftime("%d")
 
+        hour = now.strftime("%H")
+        
+        minute = now.strftime("%M")
+
         snapshot_directory = (
             storage.snapshots_path
             / year
             / month
             / day
+            / hour
+            / minute
         )
 
         snapshot_directory.mkdir(

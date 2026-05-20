@@ -88,5 +88,16 @@ class RecognitionService:
     def total_faces(self) -> int:
         return self.registry.count()
 
+    def process_frame(
+        self,
+        frame
+    ) -> dict:
+
+        logger.info(
+            f"Processing frame from camera '{frame.camera_id}'"
+        )
+
+        return self.pipeline.process(frame)
+
 
 recognition_service = RecognitionService()

@@ -1,0 +1,9 @@
+{
+    "event_id": "3120db65ddd24ba5b334c84ec5255349",
+    "event_type": "ACCESS_DENIED",
+    "timestamp": "2026-05-20T17:30:25.722122",
+    "payload": {
+        "camera_id": "default",
+        "snapshot_path": "storage/snapshots/2026/05/20/17/30/access_denied_7744494806a3492b8e0d76a8b8303695.jpg"
+    }
+}

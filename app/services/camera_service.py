@@ -56,11 +56,13 @@ class CameraService:
         self,
         camera_id: str
     ) -> Optional[Frame]:
-
+    
         return self.stream_manager.get_frame(camera_id)
 
     def list_cameras(self) -> list[str]:
         return self.stream_manager.list_cameras()
 
+    def get_camera(self, camera_id: str):
+        return self.stream_manager.get_camera(camera_id)
 
 camera_service = CameraService()

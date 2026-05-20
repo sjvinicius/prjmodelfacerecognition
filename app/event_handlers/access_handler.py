@@ -94,18 +94,14 @@ class AccessHandler:
 
         try:
 
-            frame = camera_service.get_frame(
-                camera_id
-            )
+            frame = camera_service.get_frame(camera_id)
 
             if frame is None:
                 return None
 
-            snapshot_path = (
-                snapshot_service.save_snapshot(
-                    image=frame.image,
-                    prefix=prefix
-                )
+            snapshot_path = snapshot_service.save_snapshot(
+                image=frame,
+                prefix=prefix
             )
 
             return snapshot_path
