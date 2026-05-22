@@ -27,7 +27,7 @@ class SupabaseClient:
 
         response = (
             self.client
-            .table("authorized_faces")
+            .table("facesautorizadas")
             .select("*")
             .execute()
         )

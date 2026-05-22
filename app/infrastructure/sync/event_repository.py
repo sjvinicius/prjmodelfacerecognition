@@ -30,32 +30,36 @@ class EventRepository:
         )
 
         insert_data = {
-            "event_id": event_data.get(
+            "faceslogs_id": event_data.get(
                 "event_id"
             ),
-            "event_type": event_data.get(
+            "usuario_id": payload.get(
+                "person_id"
+            ),
+            "tipoevento": event_data.get(
                 "event_type"
             ),
-            "timestamp": event_data.get(
-                "timestamp"
-            ),
-            "camera_id": payload.get(
+            "camera": payload.get(
                 "camera_id"
-            ),
-            "person_id": payload.get(
-                "person_id"
             ),
             "confidence": payload.get(
                 "confidence"
             ),
-            "snapshot_path": payload.get(
+            "foto_arquivo": payload.get(
                 "snapshot_path"
-            )
+            ),
+            "criacao_token": payload.get(
+                "camera_id"
+            ),
+            "criacao_data": event_data.get(
+                "timestamp"
+            ),
+            "status": 'A'
         }
 
         (
             self.supabase_client.client
-            .table("access_logs")
+            .table("facerecoglogs")
             .insert(insert_data)
             .execute()
         )
