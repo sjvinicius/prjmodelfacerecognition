@@ -94,7 +94,7 @@ class RecognitionService:
     ) -> dict:
 
         logger.info(
-            f"Processing frame from camera '{frame.camera_id}'"
+            f"RECSERVICE | Processing frame from camera '{frame.camera_id}'"
         )
 
         return self.pipeline.process(frame)

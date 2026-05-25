@@ -21,7 +21,7 @@ class RecognitionPipeline:
     ) -> dict:
 
         logger.info(
-            f"Processing frame from camera '{frame.camera_id}'"
+            f"RECPIPE | Processing frame from camera '{frame.camera_id}'"
         )
 
         faces = self.detector.detect(frame)

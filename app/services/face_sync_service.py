@@ -32,7 +32,7 @@ class FaceSyncService:
 
         for face in faces:
 
-            person_id = face.get("person_id")
+            person_id = face.get("usuario_id")
 
             embedding = face.get("embedding")
 

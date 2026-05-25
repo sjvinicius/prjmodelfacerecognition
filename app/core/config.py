@@ -45,6 +45,10 @@ class Settings:
     EVENT_QUEUE_INTERVAL = float(
         os.getenv("EVENT_QUEUE_INTERVAL", 2)
     )
+
+    ENROLLMENT_INTERVAL = float(
+        os.getenv("ENROLLMENT_INTERVAL", 2)
+    )
     
     STORAGE_CLEANUP_INTERVAL = int(
         os.getenv("STORAGE_CLEANUP_INTERVAL", 3600)

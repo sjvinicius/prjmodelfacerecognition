@@ -10,6 +10,7 @@ from app.workers.recognition_worker import RecognitionWorker
 from app.workers.event_queue_worker import EventQueueWorker
 from app.workers.storage_cleanup_worker import StorageCleanupWorker
 from app.workers.sync_worker import SyncWorker
+from app.workers.enrollment_worker import EnrollmentWorker
 
 
 def create_app() -> Flask:
@@ -34,6 +35,9 @@ def create_app() -> Flask:
 
     sync_worker = SyncWorker()
     sync_worker.start()
+
+    enrollment_worker = EnrollmentWorker()
+    enrollment_worker.start()
 
     app.config["APP_NAME"] = settings.APP_NAME
     app.config["DEBUG"] = settings.DEBUG

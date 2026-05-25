@@ -44,3 +44,24 @@ class InsightFaceDetector:
             })
 
         return results
+
+    def detect_image(
+        self,
+        image
+    ):
+
+        faces = self.app.get(image)
+
+        results = []
+
+        for face in faces:
+
+            bbox = face.bbox.astype(int).tolist()
+
+            results.append({
+                "bbox": bbox,
+                "confidence": float(face.det_score),
+                "face_object": face
+            })
+
+        return results

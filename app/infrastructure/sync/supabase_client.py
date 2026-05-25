@@ -28,10 +28,12 @@ class SupabaseClient:
         response = (
             self.client
             .table("facesautorizadas")
-            .select("*")
+            .select("usuario_id, embedding")
+            .eq("status", "A")
             .execute()
         )
 
+        print(response)
         data = response.data or []
 
         return data
